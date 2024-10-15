@@ -93,6 +93,7 @@ def resolve(page_file):
     # our_file_lines = lines[:unconflicted_start_until] \
     #                  + list(lines[conflict[0]:conflict[1]] for conflict in conflicts) \
     #                  + lines[unconflicted_end_from:]
+    # ref: https://stackoverflow.com/a/56407963/207981
     our_file_lines = lines[:unconflicted_start_until_idx]
     their_file_lines = lines[:unconflicted_start_until_idx]
     for conflict in conflicts:

@@ -6,7 +6,7 @@ from conflicted_ac_page_resolver import resolve
 
 
 class Test(TestCase):
-    @patch('builtins.print')
+    @patch('builtins.print')  # ref: https://stackoverflow.com/a/64140196/207981
     def test_resolve(self, mock_print):
         # use a contrived conflicted annotation page file to test the resolve function
         resolve("conflicted_page.json")
