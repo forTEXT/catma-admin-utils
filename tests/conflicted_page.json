@@ -1,0 +1,85 @@
+[
+  {
+    "type": "Annotation",
+    "id": "collections/fake/annotations/CATMA_33BBD3D4-24A5-42B7-8B5B-9D52136453B4",
+    "body": {
+      "properties": {
+        "system": {
+          "CATMA_54A5F93F-5333-3F0D-92F7-7BD5930DB9E6": [
+            "2024-10-11T14:00:00.000+0200"
+          ]
+        }
+      }
+    },
+    "somethingunique": "first"
+  },
+  {
+    "type": "Annotation",
+<<<<<<< HEAD
+    "id": "collections/fake/annotations/CATMA_4EB4134E-FE86-459A-8384-BDE056B3FADF",
+    "body": {
+      "properties": {
+        "system": {
+          "CATMA_54A5F93F-5333-3F0D-92F7-7BD5930DB9E6": [
+            "2024-10-11T14:05:00.000+0200"
+          ]
+        }
+      }
+    },
+    "somethingunique": "second"
+=======
+    "id": "collections/fake/annotations/CATMA_CD85F4A5-CBB9-459D-8D91-86681D092180",
+    "body": {
+      "properties": {
+        "system": {
+          "CATMA_54A5F93F-5333-3F0D-92F7-7BD5930DB9E6": [
+            "2024-10-11T14:02:00.000+0200"
+          ]
+        }
+      }
+    },
+    "somethingunique": "third"
+>>>>>>> master
+  },
+  {
+    "type": "Annotation",
+    "id": "collections/fake/annotations/CATMA_C54617B4-61B3-43F4-94FF-C5CA253767B0",
+    "body": {
+      "properties": {
+        "system": {
+          "CATMA_54A5F93F-5333-3F0D-92F7-7BD5930DB9E6": [
+            "2024-10-11T14:10:00.000+0200"
+          ]
+        }
+      }
+    },
+    "somethingunique": "fourth"
+  },
+  {
+    "type": "Annotation",
+    "id": "collections/fake/annotations/CATMA_EC4AAAB3-A65D-43E7-A966-67CDE70E636A",
+    "body": {
+      "properties": {
+        "system": {
+          "CATMA_54A5F93F-5333-3F0D-92F7-7BD5930DB9E6": [
+<<<<<<< HEAD
+            "2024-10-11T14:12:00.000+0200"
+          ]
+        }
+      }
+    },
+    "somethingunique": "fifth-1"
+=======
+            "2024-10-11T14:15:00.000+0200"
+          ]
+        }
+      }
+    },
+    "somethingunique": "fifth-2"
+>>>>>>> master
+<<<<<<< HEAD
+  }
+=======
+  }
+>>>>>>> master
+]
