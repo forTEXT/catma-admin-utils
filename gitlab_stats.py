@@ -5,7 +5,7 @@ import gitlab
 PERSONAL_ACCESS_TOKEN = "<token>"
 
 
-def get_catma_project_statistics():
+def get_catma6_basic_project_statistics():
     gl = gitlab.Gitlab(url='https://git.catma.de', private_token=PERSONAL_ACCESS_TOKEN)
 
     with open('project_stats.csv', 'w', newline='') as csvfile:
@@ -15,7 +15,7 @@ def get_catma_project_statistics():
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
 
-        groups = gl.groups.list(as_list=False, statistics=True, order_by="id")
+        groups = gl.groups.list(iterator=True, statistics=True, order_by="id")
         for group in groups:
             print(f"Processing group with ID: {group.id}")
 
@@ -32,7 +32,7 @@ def get_catma_project_statistics():
                 csv_entry['storage_size'] = group.statistics['storage_size']
                 csv_entry['repository_size'] = group.statistics['repository_size']
 
-            group_members = group.members.list(all=True)
+            group_members = group.members.list(get_all=True)
 
             csv_entry['member_count'] = len(group_members)
             csv_entry['owner_count'] = len([gm for gm in group_members if gm.access_level == 50])
