@@ -7,6 +7,8 @@ import gitlab
 PERSONAL_ACCESS_TOKEN = "<token>"
 
 LOCALGIT_PATH='/catmadata/localgit'
+# projects that will not be touched:
+EXCLUSIONS = []
 
 
 # https://stackoverflow.com/a/234329/207981
@@ -31,6 +33,10 @@ def cleanup_catma6_projects(dry_run=True):
     for group in groups:
         print(f'\nProcessing group "{group.name}" with ID: {group.id}')
         print(f'- Created at: {group.created_at}, web URL: {group.web_url}')
+
+        if group.path in EXCLUSIONS:
+            print('Group listed in exclusions, skipping')
+            continue
 
         group_members = group.members.list(get_all=True)
 
