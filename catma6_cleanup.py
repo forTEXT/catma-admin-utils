@@ -29,7 +29,10 @@ def cleanup_catma6_projects(dry_run=True):
 
     gl = gitlab.Gitlab(url='https://git.catma.de', private_token=PERSONAL_ACCESS_TOKEN)
 
-    groups = gl.groups.list(iterator=True, order_by="id", top_level_only=True, search="CATMA")
+    # if python-gitlab < 3.6.0, parameter "get_all" needs to be changed to "all" and "iterator=True" to "as_list=False"
+    groups = gl.groups.list(
+        get_all=True, iterator=True, per_page=100, order_by="id", top_level_only=True, search="CATMA"
+    )
     for group in groups:
         print(f'\nProcessing group "{group.name}" with ID: {group.id}')
         print(f'- Created at: {group.created_at}, web URL: {group.web_url}')
@@ -38,7 +41,8 @@ def cleanup_catma6_projects(dry_run=True):
             print('Group listed in exclusions, skipping')
             continue
 
-        group_members = group.members.list(get_all=True)
+        # if python-gitlab < 3.6.0, parameter "get_all" needs to be changed to "all"
+        group_members = group.members.list(get_all=True, per_page=100)
 
         for member in group_members:
             print(f'-- Member: {member.username}')
